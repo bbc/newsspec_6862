@@ -1,0 +1,124 @@
+$font-color: #fff;
+//$path: '/news/special/2013/newsspec_5745/';
+$gutter: 0.5em;
+$twitter-color: #47c7fa;
+$facebook-color: #3c5a98;
+$email-color:#615f5d;
+
+.ns__share {
+    overflow: hidden;
+    clear: both;
+    padding-bottom: 0;
+    zoom: 1;
+
+    .share__title {
+        font-size: 24px;
+
+        a {
+            letter-spacing: normal;
+            font-weight: normal;
+            font-size: .5em;
+        }
+    }
+
+    .share__tools {
+        margin: $gutter (-$gutter/2);
+        overflow: hidden;
+        zoom: 1;
+    }
+    ul li.share__tool  {
+    	background-image: none;
+    	padding: 0;
+    	margin-right: $gutter / 2;
+        margin-left: $gutter / 2;
+    }
+    .share__tool {
+        float: left;
+        margin-bottom: $gutter;
+        width: 100%;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+
+        box-sizing: border-box;
+
+        a {
+            background-color: #615f5d;
+            display: block;
+            height: 40px;
+            overflow: hidden;
+            text-align: center;
+            font-size: 16px;
+            line-height: 40px;
+            font-weight: bold;
+            color: #fff;
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    %share__tool__sprite {
+        a {
+            background: $email-color url('f/share_tools.png') no-repeat;
+            span {
+                text-indent: -5000px;
+            }
+        }
+
+    }
+
+    .share__tool--facebook {
+        @extend %share__tool__sprite;
+
+        a {
+            background-color: $facebook-color;
+            background-position: center -106px;
+        }
+        a:hover{
+        	background-color: lighten( $facebook-color, 10% )
+        }
+    }
+
+    .share__tool--twitter {
+        @extend %share__tool__sprite;
+
+        a {
+            background-color: $twitter-color;
+            background-position: center -148px;
+        }
+        a:hover{
+        	background-color: lighten( $twitter-color, 10% )
+        }
+    }
+
+    .share__tool--email {
+        a {
+        	text-decoration: none;
+            padding-top: 14px;
+            padding-bottom: 4px;
+            height: 22px;
+            line-height: 1;
+
+            span {
+                display: inline;
+                color: $font-color;
+                font-size: 1em;
+                font-weight: bold;
+                padding: 3px 0 3px 28px;
+                background: transparent url('f/share_tools.png') 0 2px no-repeat;
+            }
+        }
+
+        a:hover {
+        	text-decoration: none;
+        	background-color: lighten( $email-color, 10% )
+        }
+    }
+
+    @include respondMinMax (320px, false) {
+        .share__tool {
+            width: 30%;
+        }
+    }
+}

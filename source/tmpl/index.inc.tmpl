@@ -1,0 +1,10 @@
+<%
+    iframeUid = "responsive-iframe-" + Math.floor(Math.random() * 100000000);
+%>
+<!--[if lt IE 9]>
+    <script src="<%= path %>/<%= vocab_dir %>/js/lib/vendors/legacy-ie-polyfills.js?v=<%= version %>"></script>
+<![endif]-->
+<div>
+    <a href="<%= path %>/<%= vocab_dir %>/index.html?v=<%= version %>" id="<%= iframeUid %>" data-static-iframe-height="600"><%= iframeLinkTitle %></a>
+</div>
+<script type="text/javascript"><%= include("../js/lib/news_special/iframemanager__host.js", {iframeUid: iframeUid}) %></script>
