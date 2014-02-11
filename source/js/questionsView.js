@@ -92,9 +92,6 @@ define(['lib/news_special/bootstrap'], function (news) {
         news.pubsub.on('updateQuestion', function () {
             questionView.updateQuestion();
         });
-        news.pubsub.on('submitResponse', function () {
-            questionComplete(questionView.model);
-        });
         news.pubsub.on('loadResult', function () {
             questionView.renderResultView();
         });
@@ -105,9 +102,29 @@ define(['lib/news_special/bootstrap'], function (news) {
             news.$('.question').removeClass('hide');
             questionView.updateQuestion();
         });
+        this.setupEvents();
     };
 
     QuestionView.prototype = {
+
+        setupEvents: function () {
+            var QuestionView = this;
+            news.$('.options').on('click', 'input', function () {
+                questionComplete(QuestionView.model);
+            });
+            news.$('.button--next_question').on('click', function (e) {
+                e.preventDefault();
+                QuestionView.nextQuestion();
+            });
+            news.$('.button--reset_quiz').on('click', function () {
+                QuestionView.model.resetQuiz();
+            });
+        },
+
+        nextQuestion: function () {
+            this.model.renderNextQuestion(parseFloat(news.$('.options input[name=candidate_options]:checked').val()));
+        },
+
         updateQuestion: function () {
             displayQuestion(this.model);
         },

@@ -27,9 +27,6 @@ define(["lib/news_special/bootstrap"], function (news) {
         update: function () {
             news.pubsub.emit("updateQuestion");
         },
-        submitResponse: function () {
-            news.pubsub.emit("submitResponse");
-        },
         renderNextQuestion: function (points) {
             this.currentScore += points;
             if ((this.currentQuestion + 1) === this.data.questions.length) {
