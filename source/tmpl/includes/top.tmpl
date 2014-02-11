@@ -165,7 +165,6 @@ window.istatsTrackingUrl = '//sa.bbc.co.uk/bbc/bbc/s?name=<%= istatsName %>&cps_
     var hostId = window.location.href.match(/hostid=(.*)&/);
     if (hostId && hostId.length) {
         window.istatsTrackingUrl += "&iframe_host=" + encodeURI(hostId[1]);
-        console.log(window.istatsTrackingUrl);
     }
 })();
 document.write('<' + 'p style="position: absolute; top: -999em;"><' + 'img src="' + window.istatsTrackingUrl + '" height="1" width="1" alt="" /><' + '/p>');
