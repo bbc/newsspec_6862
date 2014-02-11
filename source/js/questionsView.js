@@ -96,7 +96,7 @@ define(['lib/news_special/bootstrap'], function (news) {
             questionComplete(questionView.model);
         });
         news.pubsub.on('loadResult', function () {
-            questionView.renderResult();
+            questionView.renderResultView();
         });
         news.pubsub.on('resetQuizView', function () {
             news.$('.result').removeClass('show');
@@ -110,10 +110,6 @@ define(['lib/news_special/bootstrap'], function (news) {
     QuestionView.prototype = {
         updateQuestion: function () {
             displayQuestion(this.model);
-        },
-
-        renderResult: function () {
-            this.renderResultView(this.model);
         },
 
         renderResultView: function () {
@@ -146,7 +142,7 @@ define(['lib/news_special/bootstrap'], function (news) {
             news.pubsub.emit('newsspec_6115:message', [this.vocab.iScored + this.model.getScore() + this.vocab.onTheQuiz]);
         }
 
-    }
+    };
 
     return QuestionView;
 
