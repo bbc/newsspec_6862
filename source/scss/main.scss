@@ -102,7 +102,7 @@ h1 {
 
 @include respondMinMax (480px, false) {
   .js .question_pic_holder {
-    background-image: url("../img/stress_images_strip.jpg");
+    /*background-image: url("../img/valentine_images_strip.jpg");*/
     background-color: transparent;
     background-repeat: no-repeat;
     display: block;

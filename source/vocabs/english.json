@@ -1,6 +1,6 @@
 {
     "iframeLinkTitle": "Take The Valentine Quiz",
-    "shortTitle": "How healthy is your relationship?",
+    "shortTitle": "Relationships test",
     "introduction": "The following test has been created by Dr Pamela Stephenson-Connolly, vice-president of the British Association for Counselling and Psychotherapy.",
     "loading": "loading",
     "next": "next",
@@ -17,7 +17,7 @@
     "outOf": " out of 40",
     "problemWithResult": "",
     "iScored": "I rated ",
-    "onTheQuiz": " out of 40 on the BBC Stress Quiz.",
+    "onTheQuiz": " out of 40 on the BBC Relationship Quiz.",
     "unknownError": "Unknown error",
 
     "text_1": "Do you feel that you and your partner respect one another's views and decisions, even if you do not agree with each other?",
@@ -50,15 +50,15 @@
     "text_10": "Do you and your partner take time to enjoy love-making, with a frequency that is acceptable to you both?",
     "fact_10": "Having a healthy, satisfying sex life is important to many people, and not so important to others. In a long term relationship, problems are likely to arise if there is an imbalance in sexual needs or desired frequency, or if sexual problems are not addressed. It is important that both partners be able to express their sexual needs and concerns, and to help each other deal with changes or problems that will naturally arise over time.",
 
-    "resultSummary_1": "<p>0 – 25: Your relationship may lack many of the qualities of a healthy relationship. Try following the advice below to help improve your relationship.</p>",
+    "resultSummary_1": "<p>0 - 25: Your relationship may lack many of the qualities of a healthy relationship. Try following the advice below to help improve your relationship.</p>",
     "resultDescription_1": "",
 
-    "resultSummary_2": "<p>25 – 35: Your relationship seems generally healthy, but there are some aspects where you could improve. Try following the advice below to help improve your relationship.</p>",
+    "resultSummary_2": "<p>25 - 35: Your relationship seems generally healthy, but there are some aspects where you could improve. Try following the advice below to help improve your relationship.</p>",
     "resultDescription_2": "",
 
-    "resultSummary_3": "<p>35 -40: Your relationship seems to display most of the qualities of a healthy relationship. However, all relationships require work and attention. The advice below may help you to improve your relationship.</p>",
+    "resultSummary_3": "<p>35 - 40: Your relationship seems to display most of the qualities of a healthy relationship. However, all relationships require work and attention. The advice below may help you to improve your relationship.</p>",
     "resultDescription_3": "",
 
-    "generalAdvice": "<h2>Advice</h2><p>Within most relationships there is an unspoken contract, an agreement about important aspects such as fairness, reliability, sexuality, truthfulness, children, fidelity and the division of labour. To improve your relationship, it is important for partners to sit down and discuss exact parameters. Without spelling them out, all these “grey areas” are open to misinterpretation and can eventually lead to serious fights and misunderstandings. Sometimes people spend their whole adult lives harbouring secret resentment about such issues as child-rearing styles, sexual frequency, or a lack of boundaries for in-laws, and this deep anger can affect the entire relationship, as well as one's health and quality of life.</p><p>It can be useful to have a regular relationship “tune-up” at least once a month - where a couple sits down specifically to discuss how things are going between them - even if they doubt they need it. This is an opportunity to air and fix any small or mounting issues before they become major problems. Amid busy lives, it's not easy to stay on top of relationship problems, but this is essential, well-spent time for any couple. As Valentine's Day approaches, make a point of sorting out underlying issues.</p><p>And if life throws you problems you cannot solve easily between yourselves, don't be afraid to seek help.</p><p>There are links at the bottom of this page.</p><p><a href='http://www.itsgoodtotalk.org.uk'>www.itsgoodtotalk.org.uk</a></p>"
+    "generalAdvice": "<h2>Advice</h2><p>Within most relationships there is an unspoken contract, an agreement about important aspects such as fairness, reliability, sexuality, truthfulness, children, fidelity and the division of labour. To improve your relationship, it is important for partners to sit down and discuss exact parameters. Without spelling them out, all these &quot;grey areas&quot; are open to misinterpretation and can eventually lead to serious fights and misunderstandings. Sometimes people spend their whole adult lives harbouring secret resentment about such issues as child-rearing styles, sexual frequency, or a lack of boundaries for in-laws, and this deep anger can affect the entire relationship, as well as one's health and quality of life.</p><p>It can be useful to have a regular relationship &quot;tune-up&quot; at least once a month - where a couple sits down specifically to discuss how things are going between them - even if they doubt they need it. This is an opportunity to air and fix any small or mounting issues before they become major problems. Amid busy lives, it's not easy to stay on top of relationship problems, but this is essential, well-spent time for any couple. As Valentine's Day approaches, make a point of sorting out underlying issues.</p><p>And if life throws you problems you cannot solve easily between yourselves, don't be afraid to seek help.</p><p>There are links at the bottom of this page.</p>"
 
 }
