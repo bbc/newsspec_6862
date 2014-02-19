@@ -302,7 +302,7 @@ module.exports = function (grunt) {
             allTests: {
                 src: 'source/js/newsspec_<%= pkg.project_number %>/*.js',
                 options: {
-                    keepRunner: false,
+                    keepRunner: true,
                     specs: 'source/js/spec/*Spec.js',
                     template: require('grunt-template-jasmine-requirejs'),
                     templateOptions: {
@@ -412,9 +412,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-cloudfile-to-vocab');
     grunt.loadNpmTasks('grunt-contrib-csslint');
 
-    grunt.registerTask('default',     ['jshint', 'css', /*'jasmine',*/ 'requirejs', 'uglify', 'multi_lang_site_generator:default', 'copy:js', 'copy:cssFurniture', 'clean']);
+    grunt.registerTask('default',     ['add_environment_data', 'jshint', 'css', 'jasmine', 'requirejs', 'uglify', 'multi_lang_site_generator:default', 'copy:js', 'copy:cssFurniture', 'clean']);
     grunt.registerTask('html',        ['add_environment_data', 'sass:inline', 'uglify', 'multi_lang_site_generator:default', 'clean']);
-    grunt.registerTask('js',          ['jshint', /*'jasmine',*/ 'requirejs', 'copy:js']);
+    grunt.registerTask('js',          ['jshint', 'jasmine', 'requirejs', 'copy:js']);
     grunt.registerTask('test',        ['jasmine']);
     grunt.registerTask('images', [], function () {
         grunt.loadNpmTasks('grunt-contrib-imagemin');

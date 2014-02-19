@@ -23,6 +23,15 @@ define([
         pubsub: $,
         setIframeHeight: iframemanager__frame.setHeight,
         hostPageSetup: iframemanager__frame.setHostPageInitialization
+        // utils: {
+        //     jsonLoop: function (json, callback) {
+        //         for (var key in json) {
+        //             if (json.hasOwnProperty(key)) {
+        //                 callback(key, json[key]);
+        //             }
+        //         }
+        //     }
+        // }
     };
 
 });

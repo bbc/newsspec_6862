@@ -22,119 +22,134 @@
                     require(['<%= pathStatic %>/<%= vocab_dir %>/js/all-'+browser+'.js'], function () {
                         require(['app'], function (app) {
 
-                            var appData = {
-                                questions: [
-                                    {
-                                        fact: "<%= fact_1 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_1 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
+                            var data = {
+                                questions: [{
+                                    question: "<%= question_1 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        fact: "<%= fact_2 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_2 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
+                                    supportingText: "<%= supportingText_1 %>"
+                                }, {
+                                    question: "<%= question_2 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        fact: "<%= fact_3 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_3 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
+                                    supportingText: "<%= supportingText_2 %>"
+                                }, {
+                                    question: "<%= question_3 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        fact: "<%= fact_4 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_4 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
+                                    supportingText: "<%= supportingText_3 %>"
+                                }, {
+                                    question: "<%= question_4 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        fact: "<%= fact_5 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_5 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
+                                    supportingText: "<%= supportingText_4 %>"
+                                }, {
+                                    question: "<%= question_5 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        fact: "<%= fact_6 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_6 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
+                                    supportingText: "<%= supportingText_5 %>"
+                                }, {
+                                    question: "<%= question_6 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        fact: "<%= fact_7 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_7 %>",
-                                            values: [0, 1, 2, 3, 4]
-                                        }
+                                    supportingText: "<%= supportingText_6 %>"
+                                }, {
+                                    question: "<%= question_7 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    0,
+                                        "<%= mostOfTheTime %>": 1,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   3,
+                                        "<%= never %>":         4
                                     },
-                                    {
-                                        fact: "<%= fact_8 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_8 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
+                                    supportingText: "<%= supportingText_7 %>"
+                                }, {
+                                    question: "<%= question_8 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        fact: "<%= fact_9 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_9 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
+                                    supportingText: "<%= supportingText_8 %>"
+                                }, {
+                                    question: "<%= question_9 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        fact: "<%= fact_10 %>",
-                                        main: {
-                                            options: ["<%= allTheTime %>", "<%= mostOfTheTime %>", "<%= sometimes %>", "<%= almostNever %>", "<%= never %>"],
-                                            text: "<%= text_10 %>",
-                                            values: [4, 3, 2, 1, 0]
-                                        }
-                                    }
-                                ],
-                                results: [
-                                    {
-                                        description: "<%= resultDescription_1 %>",
-                                        maxScore: "25",
-                                        summary: "<%= resultSummary_1 %>"
+                                    supportingText: "<%= supportingText_9 %>"
+                                }, {
+                                    question: "<%= question_10 %>",
+                                    options: {
+                                        "<%= allTheTime %>":    4,
+                                        "<%= mostOfTheTime %>": 3,
+                                        "<%= sometimes %>":     2,
+                                        "<%= almostNever %>":   1,
+                                        "<%= never %>":         0
                                     },
-                                    {
-                                        description: "<%= resultDescription_2 %>",
-                                        maxScore: "35",
-                                        summary: "<%= resultSummary_2 %>"
-                                    },
-                                    {
-                                        description: "<%= resultDescription_3 %>",
-                                        maxScore: "40",
-                                        summary: "<%= resultSummary_3 %>"
-                                    }
-                                ],
-                                generalAdvice: "<%= generalAdvice %>"
+                                    supportingText: "<%= supportingText_10 %>"
+                                }],
+                                feedback: [{
+                                    description: "<%= resultDescription_1 %>",
+                                    maxScore:    "25",
+                                    summary:     "<%= resultSummary_1 %>"
+                                }, {
+                                    description: "<%= resultDescription_2 %>",
+                                    maxScore:    "35",
+                                    summary:     "<%= resultSummary_2 %>"
+                                }, {
+                                    description: "<%= resultDescription_3 %>",
+                                    maxScore:    "40",
+                                    summary:     "<%= resultSummary_3 %>"
+                                }]
                             }
 
                             var vocab = {
-                                youScored: '<%= youScored %>',
-                                outOf: '<%= outOf %>',
-                                problemWithResult: '<%= problemWithResult %>',
-                                iScored: '<%= iScored %>',
-                                onTheQuiz: '<%= onTheQuiz %>',
-                                unknownError: '<%= unknownError %>'
+                                next:          "<%= next %>",
+                                restart:       "<%= restart %>",
+                                outOf:         "<%= outOf %>",
+                                iRated:        "<%= iRated %>",
+                                youRated:      "<%= youRated %>",
+                                onTheQuiz:     "<%= onTheQuiz %>",
+                                generalAdvice: "<%= generalAdvice %>"
                             };
 
-                            app.init('<%= storyPageUrl %>', appData, vocab);
+                            app.init('<%= storyPageUrl %>', data, vocab);
                         });
                     });
                 }

@@ -1,44 +1,82 @@
-define(["lib/news_special/bootstrap"], function (news) {
-    return {
-        currentQuestion: 0,
-        crumbTrail: [],
-        lastResponse: null,
-        data: null,
-        currentScore: 0,
-        resetCrumbTrail: function () {
-            for (var i = this.data.questions.length; i--;) {
-                this.crumbTrail[i] = "";
-            }
+define(['lib/news_special/bootstrap'], function (news) {
+
+    var Quiz = function (data) {
+        this.questions              = data.questions;
+        this.totalNumberOfQuestions = this.questions.length;
+        this.feedback               = data.feedback;
+        this.score                  = 0;
+        this.currentQuestion        = 1;
+        this.setupPubsubs();
+    };
+
+    Quiz.prototype = {
+        setupPubsubs: function () {
+            var Quiz = this;
+            news.pubsub.on('quiz:requestFirstQuestion', function () {
+                Quiz.getFirstQuestion();
+            });
+            news.pubsub.on('quiz:answerQuestion', function (answer) {
+                Quiz.answerQuestion(answer);
+            });
+            news.pubsub.on('quiz:reset', function () {
+                Quiz.reset();
+            });
         },
-        getCurrentQuestion: function () {
-            return this.currentQuestion;
+        reset: function () {
+            this.score = 0;
+            this.currentQuestion = 1;
+            this.getFirstQuestion();
         },
-        getLastResponse: function () {
-            return this.lastResponse;
+        answerQuestion: function (answer) {
+            var score = this.questions[(this.currentQuestion - 1)].options[answer];
+            this.addToScore(score);
+            this.nextQuestion();
         },
-        getScore: function () {
-            return this.currentScore;
+        addToScore: function (score) {
+            this.score += parseInt(score, 10);
         },
-        resetQuiz: function () {
-            this.resetCrumbTrail();
-            this.currentScore = 0;
-            news.pubsub.emit("resetQuizView");
+        getFirstQuestion: function () {
+            var first = this.questions[0];
+            news.pubsub.emit('quiz:showQuestion', [first.question, first.options, first.supportingText]);
+            news.pubsub.emit('quiz:progress', [this.currentQuestion, this.totalNumberOfQuestions]);
         },
-        update: function () {
-            news.pubsub.emit("updateQuestion");
-        },
-        renderNextQuestion: function (points) {
-            this.currentScore += points;
-            if ((this.currentQuestion + 1) === this.data.questions.length) {
-                news.pubsub.emit("loadResult");
-                news.pubsub.emit("shareResult");
-                this.currentQuestion = 0;
+        nextQuestion: function () {
+            if ((this.currentQuestion + 1) > this.totalNumberOfQuestions) {
+                news.pubsub.emit('quiz:end', [this.score, this.getHighestPossibleScore(), this.getFeedback()]);
             }
             else {
-                this.currentQuestion++;
-                news.pubsub.emit("updateQuestion");
-                news.pubsub.emit("nextQuestion");
+                var next = this.questions[this.currentQuestion];
+                this.currentQuestion += 1;
+                news.pubsub.emit('quiz:showQuestion', [next.question, next.options, next.supportingText]);
+                news.pubsub.emit('quiz:progress', [this.currentQuestion, this.totalNumberOfQuestions]);
             }
+        },
+        getFeedback: function () {
+            var Quiz = this,
+                correctFeedback = null;
+
+            for (var i = 0, len = this.feedback.length; i < len; i++) {
+                if (Quiz.score <= this.feedback[i].maxScore) {
+                    correctFeedback = this.feedback[i];
+                    return correctFeedback;
+                }
+            }
+        },
+        getHighestPossibleScore: function () {
+            var highScores = 0;
+            this.questions.forEach(function (question) {
+                var highestScoringOption = 0;
+                news.$.each(question.options, function (key, value) {
+                    if (value > highestScoringOption) {
+                        highestScoringOption = value;
+                    }
+                });
+                highScores += highestScoringOption;
+            });
+            return highScores;
         }
     };
+
+    return Quiz;
+
 });
