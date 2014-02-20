@@ -29,9 +29,10 @@ $email-color:#615f5d;
     }
     ul li.share__tool  {
     	background-image: none;
-    	padding: 0;
-    	margin-right: $gutter / 2;
+        list-style: none;
+        margin-right: $gutter / 2;
         margin-left: $gutter / 2;
+    	padding: 0;
     }
     .share__tool {
         float: left;

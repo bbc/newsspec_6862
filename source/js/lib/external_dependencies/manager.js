@@ -16,10 +16,8 @@ define(['istats', 'lib/news_special/bootstrap'], function(istats, news){
 	// for link tracking
 	// istats.track('external', { region: document.getElementsByTagName('body')[0] });
 	// istats.track('download', { region: document.getElementsByTagName('body')[0] });
-	console.log(istats);
 	istats.init();
 	news.pubsub.on('istats', function(actionType, actionName, newLabels) {
-		console.log('istats', [actionType, actionName, newLabels]);
 		istats.log(actionType, actionName, newLabels);
 	});
 
