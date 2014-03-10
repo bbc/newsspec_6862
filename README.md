@@ -2,26 +2,15 @@
 
 The Valentine Quiz
 
-
 ## Getting started
 
 Set up the project
 
 ```
+npm install
 grunt
 ```
 
-Make images responsive
-
-```
-grunt images
-```
-
-Build World Service version
-
-```
-grunt translate
-```
-
 ## License
-Copyright (c) 2014 BBC
+
+This project is available to everyone under the terms of the Apache 2.0 open source license. Take a look at the LICENSE file in the code.
